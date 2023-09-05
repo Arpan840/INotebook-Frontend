@@ -20,7 +20,7 @@ const Home = ({ text, mode }) => {
   };
   return (
     <div>
-      <div className="container my-3">
+      <div className="container my-3 " >
         <h1 style={{ color: text }}>Add a Note</h1>
         <form>
           <div className="mb-3">

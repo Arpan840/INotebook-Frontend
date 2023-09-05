@@ -7,6 +7,7 @@ import Home from './Home';
 import About from './About';
 import NoteState from "./Context/Small Notes/NoteState";
 
+
 import Login from './Login';
 import SignUp from './SignUp';
 

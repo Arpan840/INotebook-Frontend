@@ -44,6 +44,7 @@ const Login = ({ text }) => {
         justifyContent: "center",
         marginTop: "10vh",
         marginBottom: "20vh",
+        height:"100vh"
       }}
     >
       <form className="container" onSubmit={handleSubmit}>

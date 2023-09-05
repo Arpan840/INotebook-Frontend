@@ -2,7 +2,7 @@ import React from "react";
 
 const About = ({text}) => {
   return (
-    <div style={{color:text}}>
+    <div style={{color:text, height:"100vh"}}>
       <h1 >About Us</h1>
       <p>
         Welcome to our note-taking website, the perfect digital companion for
