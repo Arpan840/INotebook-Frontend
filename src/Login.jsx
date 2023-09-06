@@ -9,8 +9,7 @@ const Login = ({ text }) => {
     e.preventDefault();
 
     const response = await fetch("http://localhost:3001/api/auth/login", {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-
+      method: "POST", 
       headers: {
         "Content-Type": "application/json",
         // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -18,11 +17,10 @@ const Login = ({ text }) => {
       body: JSON.stringify({ email: login.email, password: login.password }),
     });
     const json = await response.json();
-    
 
     if (json.success === true) {
-     sessionStorage.setItem('token', json.AuthToken);
-     
+      sessionStorage.setItem("token", json.AuthToken);
+
       nevigate("/");
       // window.location.href = "/";
     } else {
@@ -44,7 +42,7 @@ const Login = ({ text }) => {
         justifyContent: "center",
         marginTop: "10vh",
         marginBottom: "20vh",
-        height:"100vh"
+        height: "50vh",
       }}
     >
       <form className="container" onSubmit={handleSubmit}>
@@ -87,7 +85,9 @@ const Login = ({ text }) => {
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
-        <Link style={{float:"right"}} to="/SignUp">New User please Create an Account</Link>
+        <Link style={{ float: "right" }} to="/SignUp">
+          New User please Create an Account
+        </Link>
       </form>
     </div>
   );
