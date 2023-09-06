@@ -28,6 +28,7 @@ const SignUp = ({ text }) => {
       // window.location.href = "/";
     } else {
       alert("User Already Exist");
+      nevigate("/Login");
     }
   };
   const onchange = (e) => {
