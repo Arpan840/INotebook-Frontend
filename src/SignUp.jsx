@@ -6,7 +6,7 @@ const SignUp = ({ text }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:3001/api/auth/CreateUSer", {
+    const response = await fetch("https://i-notebook-backend-ca67.vercel.app/CreateUSer", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
 
       headers: {
