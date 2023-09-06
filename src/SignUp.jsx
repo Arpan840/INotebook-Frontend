@@ -45,7 +45,7 @@ const SignUp = ({ text }) => {
         justifyContent: "center",
         marginTop: "10vh",
         marginBottom: "20vh",
-        height:"50vh"
+        height:"60vh"
       }}
     >
       <form className="container" onSubmit={handleSubmit}>
