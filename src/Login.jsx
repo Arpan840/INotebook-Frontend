@@ -8,7 +8,7 @@ const Login = ({ text }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://i-notebook-backend-ca67.vercel.app/login", {
+    const response = await fetch("https://i-notebook-backend-ca67.vercel.app/api/auth/login", {
       method: "POST", 
       headers: {
         "Content-Type": "application/json",
