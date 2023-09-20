@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FiMenu } from "react-icons/fi";
-import { Link, useLocation,useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navabar = ({ changeMode, mode, symbol, bg, text }) => {
   let locatin = useLocation();
-  let nevigator=useNavigate()
-  let handleLogout=()=>{
-     sessionStorage.removeItem('token')
-     nevigator("/Login")
-  }
+  let nevigator = useNavigate();
+
+  let handleLogout = () => {
+    sessionStorage.removeItem("token");
+    nevigator("/Login");
+  };
   useEffect(() => {
     console.log(locatin.pathname);
   }, [locatin]);
@@ -65,6 +66,7 @@ const Navabar = ({ changeMode, mode, symbol, bg, text }) => {
           <div className="d-grid gap-2 col-12">
             <Link to="/" className="active">
               <button
+                active
                 type="button"
                 className={`btn btn-${mode} w-100 my-2 ${
                   locatin.pathname === "/" ? "active" : ""
@@ -77,37 +79,48 @@ const Navabar = ({ changeMode, mode, symbol, bg, text }) => {
             <Link to="/about" className="nav-link active">
               <button
                 type="button"
-                className={`btn btn-${mode} w-100 my-2 ${
-                  locatin.pathname === "/about" ? "active" : ""
+                className={`btn  w-100 my-2 ${
+                  locatin.pathname === "/about" ? "btn-primary" : `btn-${mode}`
                 } `}
                 data-bs-dismiss="offcanvas"
               >
                 About
               </button>
             </Link>
-           {!sessionStorage.getItem('token')?<div><Link to="/login" className="nav-link active">
-             <button
-                type="button"
-                className={`btn btn-${mode} w-100 my-2 ${
-                  locatin.pathname === "/login" ? "active" : ""
-                } `}
-                data-bs-dismiss="offcanvas"
-              >
-                Login
-              </button>
-            </Link>
-            <Link to="/signup" className="nav-link active">
+            {!sessionStorage.getItem("token") ? (
+              <div>
+                <Link to="/login" className="nav-link active">
+                  <button
+                    type="button"
+                    className={`btn  w-100 my-2 ${
+                      locatin.pathname === "/login" ? "btn-primary" : ``
+                    } `}
+                    data-bs-dismiss="offcanvas"
+                  >
+                    Login
+                  </button>
+                </Link>
+                <Link to="/signup" className="nav-link active">
+                  <button
+                    type="button"
+                    className={`btn btn-${mode} w-100 my-2 ${
+                      locatin.pathname === "/signup" ? "active" : ""
+                    } `}
+                    data-bs-dismiss="offcanvas"
+                  >
+                    Sign Up
+                  </button>
+                </Link>
+              </div>
+            ) : (
               <button
-                type="button"
-                className={`btn btn-${mode} w-100 my-2 ${
-                  locatin.pathname === "/signup" ? "active" : ""
-                } `}
+                onClick={handleLogout}
+                className={`btn btn-${mode} w-100 my-2  `}
                 data-bs-dismiss="offcanvas"
               >
-                Sign Up
+                Log Out
               </button>
-              </Link></div>:<button onClick={handleLogout} className={`btn btn-${mode} w-100 my-2  `}
-                data-bs-dismiss="offcanvas">Log Out</button>}
+            )}
           </div>
 
           <button

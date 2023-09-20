@@ -32,6 +32,7 @@ const Login = ({ text }) => {
   };
 
   return (
+    <div style={{height:'100vh'}}>
     <div
       style={{
         border: "2px solid blue",
@@ -89,6 +90,7 @@ const Login = ({ text }) => {
           New User please Create an Account
         </Link>
       </form>
+    </div>
     </div>
   );
 };

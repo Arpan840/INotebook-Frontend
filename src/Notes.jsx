@@ -12,7 +12,7 @@ const Notes = ({ text }) => {
     if (sessionStorage.getItem("token")) {
       getAllNotes();
     } else {
-      navigate("/Login");
+      navigate("/login");
     }
     // eslint-disable-next-line
   }, []);
