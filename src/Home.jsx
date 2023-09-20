@@ -19,7 +19,7 @@ const Home = ({ text, mode }) => {
     setNote({ ...note, [e.target.name]: e.target.value });
   };
   return (
-    <div style={{height:'100vh'}}>
+    <div style={{height:'100%'}}>
       <div className="container my-3 " >
         <h1 style={{ color: text }}>Add a Note</h1>
         <form>
