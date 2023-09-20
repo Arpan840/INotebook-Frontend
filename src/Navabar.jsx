@@ -8,7 +8,7 @@ const Navabar = ({ changeMode, mode, symbol, bg, text }) => {
 
   let handleLogout = () => {
     sessionStorage.removeItem("token");
-    nevigator("/Login");
+    nevigator("/login");
   };
   useEffect(() => {
     console.log(locatin.pathname);
@@ -68,8 +68,8 @@ const Navabar = ({ changeMode, mode, symbol, bg, text }) => {
               <button
                 active
                 type="button"
-                className={`btn btn-${mode} w-100 my-2 ${
-                  locatin.pathname === "/" ? "active" : ""
+                className={`btn  w-100 my-2 ${
+                  locatin.pathname === "/" ? "btn-primary" : `btn-${mode}`
                 } `}
                 data-bs-dismiss="offcanvas"
               >
@@ -93,18 +93,18 @@ const Navabar = ({ changeMode, mode, symbol, bg, text }) => {
                   <button
                     type="button"
                     className={`btn  w-100 my-2 ${
-                      locatin.pathname === "/login" ? "btn-primary" : ``
+                      locatin.pathname === "/login" ? "btn-primary" : `btn-${mode}`
                     } `}
                     data-bs-dismiss="offcanvas"
                   >
                     Login
                   </button>
                 </Link>
-                <Link to="/signup" className="nav-link active">
+                <Link to="/signUp" className="nav-link active">
                   <button
                     type="button"
-                    className={`btn btn-${mode} w-100 my-2 ${
-                      locatin.pathname === "/signup" ? "active" : ""
+                    className={`btn  w-100 my-2 ${
+                      locatin.pathname === "/signUp" ? "btn-primary" : `btn-${mode}`
                     } `}
                     data-bs-dismiss="offcanvas"
                   >

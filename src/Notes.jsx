@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import NoteContext from "./Context/Small Notes/noteContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -40,7 +42,7 @@ const Notes = ({ text }) => {
     editNote(unote.id, unote.etitle, unote.edescription, unote.etag);
     refClose.current.click();
     setTimeout(() => {
-      alert("Note is updated");
+      toast("Your note has been successfully updated.");
     }, 300);
   };
   const onChange = (e) => {
@@ -183,6 +185,9 @@ const Notes = ({ text }) => {
             </div>
           );
         })}
+      </div>
+      <div>
+        <ToastContainer />
       </div>
     </>
   );
